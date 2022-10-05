@@ -26,6 +26,16 @@ onChangePasswordRepeat = (event) => {
   this.setState({ passwordRepeat: value});
 };
 
+onChlickSignup = ()=>{
+  
+const user = {
+userName: this.state.userName,
+displayName:this.state.displayName,
+password:this.state.password
+};
+  this.props.actions.postSignup(user);
+};
+
     render(){
         return(
         <div> 
@@ -56,11 +66,19 @@ onChange={this.onChangePasswordRepeat}
 </div>
 
 <div>
-<button>Sign up!</button>
+<button onClick={this.onChlickSignup}>Sign up!</button>
 </div>
 
         </div>
         );
     }
 }
+UserSingupPage.defaultProps = {
+  actions: {
+    postSignup:()=>
+    new Promise((resolve, reject)=>{
+      resolve({});
+    })
+  }
+};
 export default UserSingupPage;
