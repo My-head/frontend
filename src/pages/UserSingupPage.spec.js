@@ -1,8 +1,12 @@
 import React from "react";
-import { render , cleanup, fireEvent} from "@testing-library/react";
-import '@testing-library/jest-dom/extend-expect'
+import { render ,
+   cleanup, 
+   fireEvent,
+  waitForDomChange,
+waitForElement}
+ from "@testing-library/react";
 import {UserSingupPage} from './UserSingupPage';
-beforeEach(cleanup);
+
 describe('UserSingupPage', ()=>{
 
 
@@ -74,8 +78,8 @@ describe ('Interactions', ()=>{
     return{
     targer:{
       value: content
-    }
-  };
+            }
+         };
         };
 
         let button, displayNameInput, userNameInput, passwordInput, passwordRepeatInput;
