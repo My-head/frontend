@@ -38,35 +38,47 @@ password:this.state.password
 
     render(){
         return(
-        <div> 
-<h1> Sign up</h1>
-<div>
-<input placeholder="Your display name"
+        <div className="conrainer"> 
+<h1 className="text-center"> Sign up</h1>
+
+<div className="col-12 mb-3">
+  <label>DisplayName</label>
+<input  className="form-control"
+placeholder="Your display name"
 value={this.state.displayName}
 onChange={this.onChangeDisplayName}
 />
 </div>
-<div>
-<input placeholder="Your username"
+
+<div className="col-12 mb-3">
+  <label>User name</label>
+<input  className="form-control"
+placeholder="Your username"
 value={this.state.userName}
 onChange={this.onChangeUserName}
 />
 </div>
-<div>
-<input placeholder="Your password" type="password"
+
+<div className="col-12 mb-3">
+  <label>Password</label>
+<input  className="form-control"
+placeholder="Your password" type="password"
 value={this.state.password}
 onChange={this.onChangePassword}
 />
 </div>
-<div>
-<input placeholder="Repeat your password" type="password"
+
+<div className="col-12 mb-3">
+  <label>Repeat password</label>
+<input  className="form-control"
+placeholder="Repeat your password" type="password"
 value={this.state.passwordRepeat}
 onChange={this.onChangePasswordRepeat}
 />
 </div>
 
-<div>
-<button onClick={this.onChlickSignup}>Sign up!</button>
+<div className="text-center">
+<button className="btn btn-primary" onClick={this.onChlickSignup}>Sign up!</button>
 </div>
 
         </div>
